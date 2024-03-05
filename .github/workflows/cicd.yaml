@@ -1,4 +1,4 @@
-name: Deploy to Azure we app
+name: Build
 
 on:
   push:
