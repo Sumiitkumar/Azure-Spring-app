@@ -17,10 +17,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build project
-        run: mvn clean install- DskipTests
+        run: -mvn clean install -DskipTests  # Added hyphen
       - name: upload Artifacts for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: springboot-example
-          path: ${{ github.workspace }}/target/*.jar
-
+          path: /target/*.jar  # Removed github.workspace
