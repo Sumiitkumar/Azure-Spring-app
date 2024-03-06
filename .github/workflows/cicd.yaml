@@ -23,4 +23,5 @@ jobs:
         with:
           name: springboot-example
           path: ${{ github.workspace }}/target/*.jar
+          retention-days: 5
  
