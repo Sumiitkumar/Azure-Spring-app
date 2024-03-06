@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["Build and upload artifacts"]  # Name of the first workflow
     types: 
-      - completed
+      - complete
 
 jobs:
   deploy:
