@@ -1,1 +1,21 @@
+name: Deploy App to Azure App Service
 
+on:
+  push:
+    branches:
+      - deploy-to-azure-app-service
+
+deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: springboot-example
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: Spring-java-APP
+          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+          package: '*.jar'
