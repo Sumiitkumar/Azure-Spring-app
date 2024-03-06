@@ -1,9 +1,9 @@
-name: Build
+name: Deploy App to Azure App Service
 
 on:
   push:
     branches:
-      - master
+      - deploy-to-azure-app-service
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
         with:
           name: springboot-example
           path: ${{ github.workspace }}/target/*.jar
-deploy:
+  deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
