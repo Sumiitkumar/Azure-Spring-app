@@ -2,7 +2,7 @@ name: Deploy to Azure Web App
 
 on:
   workflow_run:
-    workflows: [" Build"]  # Name of the first workflow
+    workflows: ["Build and upload artifacts"]  # Name of the first workflow
     types: 
       - completed
 
