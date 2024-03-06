@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
       - name: Build Project
         run: mvn clean install -DskipTests
-      - name: Upload Artifacct for deployment job
+      - name: Upload Artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: springboot-example
