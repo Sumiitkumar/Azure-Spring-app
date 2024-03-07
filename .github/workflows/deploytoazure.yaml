@@ -14,8 +14,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: Spring-Boot-Azure
-          workflow: "Build and upload artifacts" # Name of the first workflow
-          workflow_file: .github/workflows/cicd.yml # Path to the first workflow file
   
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
