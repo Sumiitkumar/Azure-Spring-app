@@ -20,5 +20,5 @@ jobs:
         with:
           app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: '*.jar'
+          package: 'target/*.jar'
           
