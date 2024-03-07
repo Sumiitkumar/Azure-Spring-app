@@ -14,7 +14,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: Spring-Boot-Azure
-          path: '/home/runner/work/Azure-Spring-app/Azure-Spring-app/target/*.jar'
+          path: deploy
   
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
