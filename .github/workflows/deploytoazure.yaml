@@ -14,9 +14,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: Spring-Boot-Azure
-          path: deploy
   
       - name: Deploy to Azure App Service
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: Spring-java-APP
