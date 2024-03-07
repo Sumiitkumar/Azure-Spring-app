@@ -1,14 +1,14 @@
 name: Deploy to Azure Web App
 
 on:
-  push:
-    branches:
-      - master
+  workflow_run:  # Triggered when the first workflow successfully completes 
+    workflows: ["Build and upload artifacts"]
+    types: 
+      - completed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    needs:  build
     steps:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v3
