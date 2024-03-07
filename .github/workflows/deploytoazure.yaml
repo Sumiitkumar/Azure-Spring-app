@@ -11,9 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact from build job
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v2
         with:
           name: Spring-Boot-Azure
+          workflow: "Build and Upload Artifact" # Name of the first workflow
+          workflow_file: .github/workflows/cicd.yml # Path to the first workflow file
+          token: ${{ secrets.GITHUB_TOKEN }}
   
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
