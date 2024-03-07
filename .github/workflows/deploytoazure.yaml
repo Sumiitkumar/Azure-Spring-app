@@ -13,12 +13,12 @@ jobs:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: artifact-app
+          name: Spring-Boot-Azure-0.0.1-SNAPSHOT
           path: ${{ github.workspace }}/target/*.jar
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: 'target/*.jar'
+          package: 'Spring-Boot-Azure-0.0.1-SNAPSHOT.jar'
           
