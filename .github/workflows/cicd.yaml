@@ -21,6 +21,6 @@ jobs:
       - name: Upload Artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: Spring-Boot-Azure
-          path: 'target/Spring-Boot-Azure.jar'
+          name: my-app
+          path: 'target/app.jar'
  
