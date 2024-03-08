@@ -10,6 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Download Artifact from build job
         uses: actions/download-artifact@v3
         with:
@@ -21,5 +22,5 @@ jobs:
         with:
           app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: '*.jar'
+          package: 'Spring-Boot-Azure.jar'
           
