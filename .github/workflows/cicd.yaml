@@ -22,5 +22,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-app
-          path: 'target/app.jar'
+          path: '${{ github.workspace }}/target/*.jar'
  
