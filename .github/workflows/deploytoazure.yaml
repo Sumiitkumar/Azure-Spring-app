@@ -13,7 +13,7 @@ jobs:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: springboot-example
+          name: Spring-Boot-Azure
           
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
