@@ -14,13 +14,13 @@ jobs:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: Spring-Boot-Azure
+          name: my-app
   
       - name: Deploy to Azure App Service
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: my-app
+          app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
           package: 'app.jar'
           
