@@ -22,5 +22,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Spring-Boot-Azure
-          path: '${{ github.workspace }}/target/*.jar'
+          path: 'target/Spring-Boot-Azure.jar'
  
