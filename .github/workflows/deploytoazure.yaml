@@ -7,17 +7,16 @@ on:
       - completed
 
 jobs:
-  deploy:
+ deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: Spring-Boot-Azure
-          
+          name: springboot-example
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: 'target/Spring-Boot-Azure-0.0.1-SNAPSHOT.jar'
+          package: '*.jar'
