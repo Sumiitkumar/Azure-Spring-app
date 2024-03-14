@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact from build job
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: springboot-example  # Replace with the name of the artifact created in your build job
-          path: downloaded_artifacts/springboot-example
+          path:  ${{ github.workspace }}/target/*.jar
        
           
       - name: Deploy to Azure App Service
@@ -22,5 +22,5 @@ jobs:
         with:
           app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: downloaded_artifacts/springboot-example/*.jar 
+          package: '/*.jar '
 
