@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v2
+        with:
+          name: springboot-example  # Replace with the name of the artifact created in your build job
+          path: downloaded_artifacts/springboot-example
        
           
       - name: Deploy to Azure App Service
