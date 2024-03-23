@@ -23,5 +23,5 @@ jobs:
         with:
           app-name: Spring-java-APP
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: springboot-example/*.jar
+          package: /home/runner/work/Azure-Spring-app/Azure-Spring-app/target/*.jar
 
